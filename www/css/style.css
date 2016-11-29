@@ -1,0 +1,40 @@
+/* Empty. Add your own CSS if you like */
+
+.bg-vid {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: 100%;;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background: url(../img/poster.jpg) no-repeat;
+	background-size: cover;
+}
+
+.nosedive-header {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 48px;
+  color: #5d3571;
+}
+
+.nosedive-text {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.img-circular{
+ width: 100px;
+ height: 100px;
+ display: inline-block;
+ border-radius: 100px;
+ -webkit-border-radius: 100px;
+ -moz-border-radius: 100px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- ngCordova essentials -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script> 
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    
+  </head>
+  <body ng-app="starter" ng-controller="AppCtrl">
+
+    <ion-pane>
+      <video autoplay loop class="bg-vid" preload="auto" poster="img/poster.jpg" webkit-playsinline playsinline>
+        <source src="vid/bg.mp4" type="video/mp4">
+        <source src="vid/bg.webm" type="video/webm">
+      </video>
+      <ion-content id="content" padding="true" has-bouncing="false">
+        <div class="spacer" style="height:50px;"></div>
+        <div class="text-center" style="height:150px;">
+          <img class="img-circular" ng-src="img/profile.jpg" />
+        </div>
+        <p class="nosedive-header text-center">@Desmond</p>
+        <div class="spacer" style="height:50px;"></div>
+        <p class="nosedive-header text-center">Score: {{ score.value }}</p>
+        <div class="spacer" style="height:100px;"></div>
+        <div class="row">
+          <div class="col-20 text-center">
+            <img ng-src="img/star_off.png" width="50" ng-if="score.value < 1" />
+            <img ng-src="img/star_on.png" width="50" ng-if="score.value >= 1" />
+          </div>
+          <div class="col-20 text-center">
+            <img ng-src="img/star_off.png" width="50" ng-if="score.value < 2" />
+            <img ng-src="img/star_on.png" width="50" ng-if="score.value >= 2" />
+          </div>
+          <div class="col-20 text-center">
+            <img ng-src="img/star_off.png" width="50" ng-if="score.value < 3" />
+            <img ng-src="img/star_on.png" width="50" ng-if="score.value >= 3" />
+          </div>
+          <div class="col-20 text-center">
+            <img ng-src="img/star_off.png" width="50" ng-if="score.value < 4" />
+            <img ng-src="img/star_on.png" width="50" ng-if="score.value >= 4" />
+          </div>
+          <div class="col-20 text-center">
+            <img ng-src="img/star_off.png" width="50" ng-if="score.value < 5" />
+            <img ng-src="img/star_on.png" width="50" ng-if="score.value >= 5" />
+          </div>
+        </div>
+        <div class="item range" style="margin-top:-55px; opacity:0.0;">
+          <input type="range" name="scorevalue" min="1" max="5" ng-model="score.value" />
+        </div>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
